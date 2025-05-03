@@ -1,0 +1,745 @@
+/* Reset de CSS - Elimina los estilos por defecto en los navegadores */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variables de colores */
+
+:root {
+    --color-primary: #002DE0;
+    --color-secondary: #EEEFEC;
+    --color-gray: #323232;
+    --color-gray2: #6B7280;
+    --color-gray3: #D1D5DB;
+    --color-black: #010827;
+    --color-white: #ffffff;
+}
+
+/* Parrafos y tipografias */
+
+p {
+    color: var(--color-black);
+    font-size: 16px font-weight: normal;
+    font-family: 'Geologica', sans-serif;
+    margin: 112px;
+}
+
+h1 {
+    color: var(--color-primary);
+    font-size-adjust: 72px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+    margin: 112px;
+
+}
+
+h2 {
+    color: var(--color-primary);
+    font-size-adjust: 48px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+    margin: 112px;
+
+}
+
+h3 {
+    color: var(--color-primary);
+    font-size-adjust: 24px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+    margin: 112px;
+
+}
+
+h4 {
+    color: var(--color-primary);
+    font-weight: 400;
+    font-size-adjust: 16px;
+    font-family: 'Geologica', sans-serif;
+    margin: 112px;
+}
+
+h5 {
+    color: var(--color-secondary);
+    font-size-adjust: 24px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+    margin: 112px;
+
+}
+
+h6 {
+    color: var(--color-secondary);
+    font-size-adjust: 16px;
+    font-weight: 400;
+    font-family: 'Geologica', sans-serif;
+    margin: 112px;
+
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    /* Siempre arriba */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 84px;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 112px;
+}
+
+.brand a {
+    color: var(--color-secondary);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Geologica', sans-serif;
+    text-decoration: none;
+}
+
+/* Ítems de navegación */
+
+.nav-items {
+    list-style: none;
+    /* Saca los puntos de la lista */
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items li {
+    display: flex;
+}
+
+
+/* Links generales */
+.nav-link {
+    color: var(--color-secondary);
+    font-size: 14px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0 16px;
+}
+
+
+/* Botón Contacto */
+.btn {
+    background-color: var(--color-gray);
+    color: #EEEFEC;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* DAR ESPACIO ARRIBA POR EL NAV FIXED */
+
+body {
+    padding-top: 84px;
+    /* Para que el contenido no quede tapado */
+}
+
+/* RESPONSIVE*/
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 24px;
+    }
+
+    .nav-items {
+        gap: 16px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 8px 12px;
+    }
+}
+
+
+/* Footer OK */
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 80px 0 60px;
+    width: 100%;
+}
+
+.footer-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 112px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-title {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Geologica', sans-serif;
+    color: var(--color-secondary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.footer-subtitle {
+    font-size: 16px;
+    font-family: 'Geologica', sans-serif;
+    color: var(--color-secondary);
+    margin: 16px 0 48px;
+    font-weight: normal;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 72px;
+}
+
+.contact-label {
+    font-size: 16px;
+    font-family: 'Geologica', sans-serif;
+    margin: 0 0 0px;
+    font-weight: normal;
+    color: var(--color-secondary);
+}
+
+.contact-item a {
+    color: var(--color-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Geologica', sans-serif;
+    text-decoration: underline;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-contenedor {
+        padding: 0 24px;
+        gap: 24px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-title {
+        font-size: 28px;
+        font-family: 'Geologica', sans-serif;
+    }
+
+    .footer-subtitle {
+        font-size: 20px;
+        font-family: 'Geologica', sans-serif;
+        margin: 8px 0 32px;
+    }
+}
+
+
+/* Hero - Home - OK */
+.hero {
+    background-color: var(--color-secondary);
+    width: 100%;
+    height: 604px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-subtitulo {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Geologica', sans-serif;
+    margin-bottom: 0;
+    /* espacio debajo del subtítulo */
+    color: var(--color-primary);
+
+}
+
+.hero-titulo {
+    font-size: 48px;
+    font-weight: 900;
+    font-family: 'Geologica', sans-serif;
+    max-width: 800px;
+    /* para que el texto no sea TAN largo */
+    color: var(--color-primary);
+}
+
+body {
+    font-family: 'Geologica', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--color-gray);
+    background-color: var(--color-white);
+    background: var(--color-white);
+}
+
+.project-cover {
+    width: 512px;
+    height: 656px;
+    background: #9CA3AF;
+    margin: 112;
+    gap: 12px;
+    padding: 120px 112px;
+    display: flex;
+    padding: 40;
+}
+
+
+/* Mis proyectos - nuevo Home */
+
+.proyectos {
+    padding: 0 rem;
+    background-color: white;
+    max-width: 1440px;
+    margin: 112px 112px 112px 112px;
+}
+
+.titulo-seccion {
+    font-family: 'Geologica', sans-serif;
+    font-size: 24px;
+    font-weight: medium;
+    color: var(--color-primary);
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin: 112px 112px 112px 112px;
+}
+
+.contenedor-proyectos {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 1rem;
+    margin: 112px;
+}
+
+.tarjeta-proyecto {
+    background: white;
+    border-radius: 0px;
+    padding: 0rem;
+}
+
+.contenedor-imagen {
+    height: 300px;
+    background: #9CA3AF;
+    border-radius: 0px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.imagen-proyecto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titulo-proyecto {
+    font-family: 'Geologica', sans-serif;
+    font-size: 24px;
+    color: var(--color-gray);
+    margin-bottom: 0.5rem;
+    margin: 0;
+}
+
+.descripcion-proyecto {
+    font-family: 'Geologica', sans-serif;
+    font-size: 16;
+    color: var(--color-gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.boton-ver-todos {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.8rem 2rem;
+    background: var(--color-gray);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Sobre mi - Home */
+.sobre-mi-home {
+    background-color: var(--color-secondary);
+    padding: 0px 0;
+}
+
+.container-sobre-mi-home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin: 0px 112px;
+}
+
+.sobre-mi-titulo2 {
+    padding: 48px 154px 0px;
+    display: flex;
+    gap: 64px;
+    margin: 112px;
+}
+
+.sobre-mi-home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 80px;
+    align-items: left;
+
+}
+
+.sobre-mi-content {
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+}
+
+.sobre-mi-texto {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    color: var(--color-text);
+}
+
+.boton-conocer-mas-home {
+    display: block;
+    margin: 0 auto 0;
+    padding: 1rem 1rem;
+    background: var(--color-gray);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+}
+
+.sobre-mi-imagen-container {
+    width: 60%;
+    height: 80%;
+    background-color: #9CA3AF; 
+    overflow: hidden;
+}
+
+.sobre-mi-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto mantiene la proporción de la imagen */
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sobre-mi-home-grid {
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+    
+    .sobre-mi-titulo {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+    
+    .sobre-mi-imagen-container {
+        height: 300px; /* Altura fija en móvil */
+    }
+}
+
+/* Page: Sobre mí -Bloque 1- NUEVO*/
+.container-sobre-mi-primer-bloque {
+    max-width: 1000px;
+    max-height: 500px;
+    margin: 32px auto 64px;
+    padding: 20px 20px;
+}
+
+.sobre-mi-titulo {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    margin-left: 0%;
+    color: var(--color-primary);
+}
+
+.sobre-mi-grid {
+    display: grid;
+    grid-template-columns: 400px 248px;
+    column-gap: 300px;
+    margin-left: 0%;
+    margin-top: 0%;
+}
+
+.años {
+    font-size: 32px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-primary)
+}
+
+.experiencia-laboral {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--color-gray);
+}
+
+.separador {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-gray3);
+    margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .experiencia-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .experiencia-titulo {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+
+/* Page: Sobre mí- Bloque3- NUEVO*/
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px 16px;
+}
+
+.experiencia {
+    padding: 30px 0;
+    background-color: var(--color-secondary);
+}
+
+.experiencia-titulo {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    margin-left: 0%;
+    color: var(--color-text);
+}
+
+.experiencia-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 138px;
+}
+
+.experiencia-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.experiencia-puesto {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 16px 0;
+    color: var(--color-text);
+}
+
+.experiencia-detalles {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    color: var(--color-gray2);
+    font-size: 16px;
+}
+
+.experiencia-empresa {
+    font-weight: 500;
+}
+
+.separador {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-gray3);
+    margin-top: 8px;
+}
+
+/* Responsive*/
+@media (max-width: 768px) {
+    .experiencia-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .experiencia-titulo {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+
+/* Servicios */
+.mis-servicios {
+    padding: 120px 112px;
+    background: var(--color-secondary);
+}
+
+.mis-servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.mis-servicios-card {
+    background: var(--color-primary);
+    padding: 32px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 24px 24px 40px -12px rgba(28, 44, 64, 0.08);
+}
+
+#sobre-mi {
+    background-color: #EEEFEC;
+
+}
+
+
+/* Sobre mi - Home */
+
+.sobre-mi {
+    background: var(--color-gray);
+    padding: 120px 112px;
+    display: flex;
+    gap: 64px;
+    margin: 112px;
+}
+
+
+/* Page-Mis proyectos*/
+
+.page-proyectos1 {
+    padding: 0 rem;
+    background-color: white;
+    max-width: 1440px;
+    margin: 112px 112px 112px 112px;
+}
+
+.page-proyectos2 {
+    padding: 0 rem;
+    background-color: white;
+    max-width: 1440px;
+    margin: 112px 112px 112px 112px;
+}
+
+.titulo-seccion {
+    font-family: 'Geologica', sans-serif;
+    font-size: 24px;
+    font-weight: medium;
+    color: var(--color-primary);
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin: 112px 112px 112px 112px;
+}
+
+.contenedor-proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 1rem;
+    margin: 112px;
+}
+
+.tarjeta-proyecto {
+    background: white;
+    border-radius: 0px;
+    padding: 0rem;
+}
+
+.contenedor-imagen {
+    height: 300px;
+    background: #9CA3AF;
+    border-radius: 0px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.imagen-proyecto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titulo-proyecto {
+    font-family: 'Geologica', sans-serif;
+    font-size: 24px;
+    color: var(--color-gray);
+    margin-bottom: 0.5rem;
+    margin: 0;
+}
+
+.descripcion-proyecto {
+    font-family: 'Geologica', sans-serif;
+    font-size: 16;
+    color: var(--color-gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.boton-ver-mas {
+    display: block;
+    margin: 2rem 0 0;
+    padding: 0.8rem 2rem;
+    background: var(--color-gray);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Page-Contacto*/
+
+.contacto-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    justify-content: center;
+    background-color: var(--color-primary);
+}
