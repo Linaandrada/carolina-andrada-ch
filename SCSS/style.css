@@ -1,0 +1,16 @@
+// _mixins.scss
+@mixin button-base {
+  display: inline-block;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Geologica', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin button-hover-effect($hover-color) {
+  &:hover {
+    background-color: $hover-color;
+    transform: translateY(-2px);
+  }
+}

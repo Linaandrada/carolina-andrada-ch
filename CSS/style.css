@@ -6,6 +6,20 @@
     box-sizing: border-box;
 }
 
+/* Nuevo(3 entrega) */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+
 /* variables de colores */
 
 :root {
@@ -80,11 +94,101 @@ h6 {
 
 }
 
+
+/* HERO-HOME */
+
+.hero {
+    background-color: var(--color-secondary);
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeSlideInHero 1.2s ease-out both;
+    max-height: 685px;
+}
+
+@keyframes fadeSlideInHero {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-contenedor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 112px;
+}
+
+.hero-subtitulo {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Geologica', sans-serif;
+    color: var(--color-primary);
+    margin: 0 0 24px;
+    line-height: 1.3;
+    z-index: 3;
+}
+
+.hero-titulo {
+    font-size: 48px;
+    font-weight: 900;
+    font-family: 'Geologica', sans-serif;
+    color: var(--color-primary);
+    max-width: 750px;
+    line-height: 1.1;
+    margin: 0;
+    hyphens: auto;
+    z-index: 3;
+    mix-blend-mode: screen;
+    opacity: 0.95;
+}
+
+.hero-fondo {
+    position: absolute;
+    width: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: aparecerFondoHero 1.2s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes aparecerFondoHero {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
 /* NAVBAR */
 
 .navbar {
-    position: fixed;
-    /* Siempre arriba */
+    position: fixed; /* Siempre arriba */
     top: 0;
     left: 0;
     width: 100%;
@@ -113,11 +217,10 @@ h6 {
     text-decoration: none;
 }
 
-/* Ítems de navegación */
+/* Ítems  */
 
 .nav-items {
-    list-style: none;
-    /* Saca los puntos de la lista */
+    list-style: none;  /* Saca los puntos de la lista */
     display: flex;
     gap: 24px;
     align-items: center;
@@ -158,14 +261,14 @@ h6 {
 /* DAR ESPACIO ARRIBA POR EL NAV FIXED */
 
 body {
-    padding-top: 84px;
-    /* Para que el contenido no quede tapado */
+    padding-top: 84px; /* Para que el contenido no quede tapado */
 }
 
 /* RESPONSIVE*/
 
 @media (max-width: 768px) {
     .navbar-container {
+        height: auto;
         padding: 0 24px;
     }
 
@@ -178,6 +281,57 @@ body {
         padding: 8px 12px;
     }
 }
+
+
+/* FIX NAVBAR POR PROBLEMA DE SUPERPOSICIÓN EN MOBILE */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        height: auto;
+    }
+
+    body {
+        padding-top: 0 !important;
+    }
+}
+
+
+
+<ul class="nav-items"><li><a href="page/proyectos.html" class="nav-link">Proyectos</a></li><li><a href="page/servicios.html" class="nav-link">Servicios</a></li><li><a href="page/sobre-mi.html" class="nav-link">Sobre mí</a></li><li><a href="page/contacto.html" class="btn">Contacto</a></li></ul></div></nav></header>
+
+
+/* Animaciones  para ítems del navbar - 3 ENTREGA */
+
+.nav-link {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-gray2);
+    transform: translateY(-1px);
+}
+
+.nav-link:active {
+    color: var(--color-secondary);
+    transform: scale(0.98);
+}
+
+/* Botón Contacto con animación */
+
+.btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-gray2);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    background-color: var(--color-primary);
+    transform: scale(0.98);
+}
+
 
 
 /* Footer OK */
@@ -262,62 +416,121 @@ body {
 }
 
 
-/* Hero - Home - OK */
+
+/* SECCIÓN -HOME INDEX - */
+
 .hero {
     background-color: var(--color-secondary);
     width: 100%;
-    height: 604px;
+    padding: 80px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeSlideInHero 1.2s ease-out both;
+    max-height: 800px;
+}
+
+@keyframes fadeSlideInHero {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-contenedor {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 112px;
 }
 
 .hero-subtitulo {
     font-size: 24px;
     font-weight: 500;
     font-family: 'Geologica', sans-serif;
-    margin-bottom: 0;
-    /* espacio debajo del subtítulo */
     color: var(--color-primary);
-
+    margin: 0 0 24px;
+    line-height: 1.3;
+    z-index: 3;
 }
 
 .hero-titulo {
     font-size: 48px;
     font-weight: 900;
     font-family: 'Geologica', sans-serif;
-    max-width: 800px;
-    /* para que el texto no sea TAN largo */
     color: var(--color-primary);
-}
-
-body {
-    font-family: 'Geologica', sans-serif;
+    max-width: 750px;
+    line-height: 1.1;
     margin: 0;
-    padding: 0;
-    color: var(--color-gray);
-    background-color: var(--color-white);
-    background: var(--color-white);
+    hyphens: auto;
+    z-index: 3;
+    mix-blend-mode: screen;
+    opacity: 0.95;
 }
 
-.project-cover {
-    width: 512px;
-    height: 656px;
-    background: #9CA3AF;
-    margin: 112;
-    gap: 12px;
-    padding: 120px 112px;
-    display: flex;
-    padding: 40;
+.hero-fondo {
+    position: absolute;
+    width: 230px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: aparecerFondoHero 1.2s ease-out forwards;
+    animation-delay: 0.6s;
 }
+
+@keyframes aparecerFondoHero {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-contenedor {
+        padding: 0 24px;
+    }
+
+    .hero-subtitulo {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .hero-titulo {
+        font-size: clamp(1.75rem, 6vw, 2rem);
+        line-height: 1.2;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .hero-titulo {
+        font-size: 3.5vw;
+        max-width: 80%;
+    }
+}
+
 
 
 /* Mis proyectos - nuevo Home */
@@ -398,91 +611,258 @@ body {
     cursor: pointer;
 }
 
+
+
 /* Sobre mi - Home */
-.sobre-mi-home {
-    background-color: var(--color-secondary);
-    padding: 0px 0;
-}
 
-.container-sobre-mi-home {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    margin: 0px 112px;
-}
-
-.sobre-mi-titulo2 {
-    padding: 48px 154px 0px;
+.sobre-mi {
+    background: var(--color-gray);
+    padding: 120px 112px;
     display: flex;
     gap: 64px;
     margin: 112px;
 }
 
-.sobre-mi-home-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-    gap: 80px;
-    align-items: left;
+/* BLOQUE SOBRE MI - sección home */
 
+.sobre-mi-seccion-home {
+    background-color: var(--color-white);
+    padding: 120px 112px;
+    padding: 120px 112px;
+    animation: fadeInUp 1s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
 }
 
-.sobre-mi-content {
+
+
+.sobre-mi-contenedor-seccion-home {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 64px;
+}
+
+.texto-contenido-seccion-home {
     display: flex;
     flex-direction: column;
-    justify-content:left;
+    gap: 16px;
 }
 
-.sobre-mi-texto {
+.sobre-mi-titulo-seccion-home {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.sobre-mi-subtitulo-seccion-home {
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 32px;
-    color: var(--color-text);
+    color: var(--color-black);
+    margin: 0;
 }
 
-.boton-conocer-mas-home {
-    display: block;
-    margin: 0 auto 0;
-    padding: 1rem 1rem;
-    background: var(--color-gray);
+.imagen-contenedor-seccion-home {
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-mi-imagen {
+    width: 40%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+.boton-saber-mas {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: var(--color-black);
     color: white;
     border: none;
     border-radius: 25px;
     font-family: 'Geologica', sans-serif;
     font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    max-width: 35%; /*  fijar ancho máximo */
+
 }
 
-.sobre-mi-imagen-container {
-    width: 60%;
-    height: 80%;
-    background-color: #9CA3AF; 
-    overflow: hidden;
+.boton-saber-mas:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
-.sobre-mi-imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Esto mantiene la proporción de la imagen */
-    display: block;
+.boton-saber-mas:active {
+    background-color: var(--color-primary);
+    transform: scale(0.98);
 }
 
-/* Responsive */
+
+
 @media (max-width: 768px) {
-    .sobre-mi-home-grid {
-        grid-template-columns: 1fr; 
-        gap: 40px;
+    .sobre-mi-contenedor-seccion-home {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 24px;
     }
-    
-    .sobre-mi-titulo {
-        font-size: 32px;
-        margin-bottom: 32px;
+
+    .sobre-mi-imagen {
+        max-width: 50%;
     }
-    
-    .sobre-mi-imagen-container {
-        height: 300px; /* Altura fija en móvil */
+
+    .boton-saber-mas {
+        width: 100%;
     }
 }
 
-/* Page: Sobre mí -Bloque 1- NUEVO*/
+/*  Nuevo- animacion 3 entrega */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+/* BLOQUE SOBRE MI - sección home-NUEVO, AJUSTES 3 ENTREGA */
+
+.mis-servicios-grid-home {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-auto-rows: minmax(250px, auto);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto 72px auto;
+    padding: 0 112px;
+    background-color: var(--color-secondary);
+    animation: fadeInCards 1.2s ease-out both;
+}
+
+@keyframes fadeInCards {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.columna-texto-home {
+    background: transparent;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cuadro-azul-simple-home {
+    background-color: var(--color-primary);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    height: 65%;
+    margin-top: 112px;
+    margin-bottom: 0;
+}
+
+.cuadro-azul-doble-home {
+    background-color: var(--color-primary);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4px;
+    height: 45%;
+    margin: 0;
+}
+
+.titulo-columna1 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--color-black);
+}
+
+.parrafo-columna1 {
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 8px 0 0;
+    color: var(--color-black);
+}
+
+.titulo-columna2,
+.titulo-columna3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+    color: var(--color-white);
+}
+
+.parrafo-columna2,
+.parrafo-columna3 {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 8px 0 0;
+    color: var(--color-white);
+}
+
+.contenido-columna1.no-espaciado p,
+.contenido-columna2.no-espaciado p {
+    margin-top: 0;
+    font-weight: 300;
+}
+
+.contenedor-doble-home {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .mis-servicios-grid-home {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        padding: 0 24px;
+        gap: 24px;
+    }
+
+    .cuadro-azul-simple-home,
+    .cuadro-azul-doble-home {
+        min-height: 240px;
+        padding: 24px;
+    }
+}
+
+
+
+
+/* SECCIÓN: Sobre mí -Bloque 1- NUEVO*/
 .container-sobre-mi-primer-bloque {
     max-width: 1000px;
     max-height: 500px;
@@ -493,6 +873,7 @@ body {
 .sobre-mi-titulo {
     font-size: 32px;
     font-weight: 500;
+    font-family: 'Geologica', sans-serif;
     margin-bottom: 60px;
     margin-left: 0%;
     color: var(--color-primary);
@@ -504,11 +885,14 @@ body {
     column-gap: 300px;
     margin-left: 0%;
     margin-top: 0%;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
 }
 
 .años {
     font-size: 32px;
     font-weight: 500;
+    font-family: 'Geologica', sans-serif;
     display: flex;
     flex-direction: column;
     color: var(--color-primary)
@@ -517,6 +901,7 @@ body {
 .experiencia-laboral {
     font-size: 16px;
     font-weight: 300;
+    font-family: 'Geologica', sans-serif;
     color: var(--color-gray);
 }
 
@@ -536,12 +921,13 @@ body {
 
     .experiencia-titulo {
         font-size: 32px;
+        font-family: 'Geologica', sans-serif;
         margin-bottom: 40px;
     }
 }
 
 
-/* Page: Sobre mí- Bloque3- NUEVO*/
+/* SECCIÓN Sobre mí- Bloque3- NUEVO*/
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -551,6 +937,7 @@ body {
 .experiencia {
     padding: 30px 0;
     background-color: var(--color-secondary);
+    font-family: 'Geologica', sans-serif;
 }
 
 .experiencia-titulo {
@@ -559,6 +946,7 @@ body {
     margin-bottom: 60px;
     margin-left: 0%;
     color: var(--color-text);
+    font-family: 'Geologica', sans-serif;
 }
 
 .experiencia-grid {
@@ -570,10 +958,12 @@ body {
 .experiencia-item {
     display: flex;
     flex-direction: column;
+    font-family: 'Geologica', sans-serif;
 }
 
 .experiencia-puesto {
     font-size: 20px;
+    font-family: 'Geologica', sans-serif;
     font-weight: 500;
     margin: 0 0 16px 0;
     color: var(--color-text);
@@ -586,6 +976,7 @@ body {
     margin-bottom: 16px;
     color: var(--color-gray2);
     font-size: 16px;
+    font-family: 'Geologica', sans-serif;
 }
 
 .experiencia-empresa {
@@ -613,44 +1004,11 @@ body {
 }
 
 
-/* Servicios */
-.mis-servicios {
-    padding: 120px 112px;
-    background: var(--color-secondary);
-}
-
-.mis-servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-}
-
-.mis-servicios-card {
-    background: var(--color-primary);
-    padding: 32px;
-    color: white;
-    border-radius: 8px;
-    box-shadow: 24px 24px 40px -12px rgba(28, 44, 64, 0.08);
-}
-
-#sobre-mi {
-    background-color: #EEEFEC;
-
-}
 
 
-/* Sobre mi - Home */
-
-.sobre-mi {
-    background: var(--color-gray);
-    padding: 120px 112px;
-    display: flex;
-    gap: 64px;
-    margin: 112px;
-}
 
 
-/* Page-Mis proyectos*/
+/* SECCION-Mis proyectos*/
 
 .page-proyectos1 {
     padding: 0 rem;
@@ -733,7 +1091,7 @@ body {
     cursor: pointer;
 }
 
-/* Page-Contacto*/
+/* sECCION -Contacto*/
 
 .contacto-contenedor {
     display: flex;
@@ -742,4 +1100,288 @@ body {
     height: 400px;
     justify-content: center;
     background-color: var(--color-primary);
+}
+
+
+@media (min-width: 769px) {
+
+    .hero,
+    .proyectos,
+    .mis-servicios,
+    .sobre-mi-home,
+    .experiencia,
+    .page-proyectos1,
+    .page-proyectos2,
+    .contacto-contenedor,
+    .footer-contenedor {
+        padding-left: 112px;
+        padding-right: 112px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero,
+    .proyectos,
+    .mis-servicios,
+    .sobre-mi-home,
+    .experiencia,
+    .page-proyectos1,
+    .page-proyectos2,
+    .contacto-contenedor,
+    .footer-contenedor {
+        padding-left: 24px;
+        padding-right: 24px;
+        box-sizing: border-box;
+    }
+}
+
+
+
+/* NAVBAR RESPONSIVE DEFINITIVO */
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 16px 0;
+    }
+
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        width: 100%;
+        padding: 0 24px;
+    }
+
+    .brand {
+        width: 100%;
+    }
+
+    .brand a {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--color-secondary);
+        text-decoration: none;
+        padding: 8px 0;
+    }
+
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .nav-items li {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        font-size: 16px;
+        color: var(--color-secondary);
+        text-decoration: none;
+        padding: 8px 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: var(--color-gray);
+        color: var(--color-secondary);
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 100px;
+        text-align: center;
+        margin-top: 8px;
+        width: fit-content;
+    }
+}
+
+
+
+
+/* SECCIONES CON FONDO */
+.hero,
+.mis-servicios-seccion,
+.sobre-mi-home,
+.experiencia,
+.contacto-contenedor,
+.footer {
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+/* SECCION MIS SERVICIOS OK - AJUSTES 3 ENTREGA  */
+
+.mis-servicios-wrapper-seccion {
+    padding-left: 112px;
+    padding-right: 112px;
+    max-width: 1200px;
+    margin: 0 auto 72px auto;
+}
+
+.mis-servicios-titulo-seccion {
+    font-size: 32px;
+    margin-bottom: 64px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: left;
+    margin-left: 0%;
+}
+
+.mis-servicios-grid-seccion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+.mis-servicios-card-seccion {
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.mis-servicios-card-seccion h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: left;
+    margin: 0;
+    color: var(--color-black);
+}
+
+.mis-servicios-card-seccion p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .mis-servicios-wrapper-seccion {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .mis-servicios-grid-seccion {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+
+
+/* SOBRE MÍ */
+.sobre-mi-home-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.sobre-mi-imagen-container {
+    width: 100%;
+    height: auto;
+}
+
+.container-sobre-mi-home {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+/* FOOTER RESPONSIVE - ajuste 3 entrega */
+
+main {
+    flex: 1 0 auto; /* Ocupa todo el espacio disponible */
+    width: 100%;
+}
+
+.footer {
+    background-color: var(--color-primary);
+    width: 100%;
+    margin-top: auto; /* para fijar al fondo */
+    padding: 80px 0 60px;
+}
+
+
+.footer-contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 24px;
+    }
+
+    .footer-contenedor {
+        gap: 20px;
+    }
+
+    .footer-title {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+    }
+
+    .footer-subtitle {
+        font-size: 1.1rem !important;
+        margin: 0.5rem 0 !important;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-item {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* FIX definitivo  */
+body>.footer {
+    position: relative;
+    z-index: 2;
+}
+
+body::after {
+    content: "";
+    display: block;
+    height: 0;
+    flex-grow: 1;
 }
